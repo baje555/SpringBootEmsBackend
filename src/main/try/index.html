@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Employee Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+<div class="login-container">
+    <div class="login-box">
+        <img src="logo.jpg" alt="Company Logo" class="logo" />
+        <h1>Employee Management System</h1>
+        <form id="login-form" onsubmit="return handleLogin(event);">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+        </form>
+        <div class="additional-links">
+            <a href="forgot.html" id="forgot-password">Forgot Password?</a>
+            <span> | </span>
+            <a href="signin.html" id="sign-up">Sign Up</a>
+        </div>
+        <div class="g-signin2" data-onsuccess="onSignIn" style="margin-top: 20px;"></div>
+    </div>
+</div>
+<script src="script.js"></script>
+<script>
+    function handleLogin(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Here you can add your logic to handle login
+        // For now, we will just log the username and password
+        console.log('Username:', username);
+        console.log('Password:', password);
+
+        // Redirect to the dashboard or handle login logic
+        // window.location.href = 'dashboard.html'; // Uncomment this line to redirect after login
+    }
+
+    function onSignIn(googleUser ) {
+        // Handle Google Sign-In here
+        const profile = googleUser .getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        // Redirect to the dashboard or handle login logic
+        // window.location.href = 'dashboard.html'; // Uncomment this line to redirect after Google login
+    }
+</script>
+</body>
+</html>
