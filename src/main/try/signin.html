@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Employee Management System</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f3f4f6; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+<div class="signup-container" style="background-color: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; width: 300px; text-align: center;">
+    <img src="logo.jpg" alt="Company Logo" class="logo" style="height: 50px; margin-bottom: 20px;" />
+    <h1 style="font-size: 1.5em; margin-bottom: 20px;">Sign Up</h1>
+    <form id="signup-form" onsubmit="return handleSignUp(event);" style="display: flex; flex-direction: column;">
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="username" style="margin-bottom: 5px;">Username</label>
+            <input type="text" id="username" name="username" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+        </div>
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="email" style="margin-bottom: 5px;">Email</label>
+            <input type="email" id="email" name="email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+        </div>
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label for="password" style="margin-bottom: 5px;">Password</label>
+            <input type="password" id="password" name="password" required style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;" />
+        </div>
+        <button type="submit" class="btn-primary" style="background-color: #6f42c1; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Sign Up</button>
+    </form>
+    <div class="additional-links" style="margin-top: 15px;">
+        <a href="index.html" style="color: #6f42c1; text-decoration: none;">Already have an account? Log In</a>
+    </div>
+</div>
+<script src="script.js"></script>
+<script>
+    function handleSignUp(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Here you can add your logic to handle sign-up
+        console.log('Username:', username);
+        console.log('Email:', email);
+        console.log('Password:', password);
+
+        // Redirect to the login page or handle sign-up logic
+        // window.location.href = 'login.html'; // Uncomment this line to redirect after sign-up
+    }
+</script>
+</body>
+</html>

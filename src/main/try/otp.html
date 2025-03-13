@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enter OTP - Employee Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="otp-container">
+    <div class="otp-box">
+        <h1>Enter OTP</h1>
+        <form id="otp-form">
+            <div class="form-group">
+                <label for="otp">Enter the OTP sent to your email</label>
+                <input type="text" id="otp" name="otp" required />
+            </div>
+            <button type="submit" class="btn-primary">Verify OTP</button>
+        </form>
+        <div class="additional-links">
+            <a href="forgot-password.html">Resend OTP</a>
+            <span> | </span>
+            <a href="login.html">Back to Login</a>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
